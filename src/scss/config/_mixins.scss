@@ -1,0 +1,45 @@
+//----------------
+//----------------
+//--- BUTTON PROPERTY
+
+@mixin p-btn($color,$background){
+    color: $color;
+    padding: .8rem 2rem;
+    display: inline-block;
+    margin-top: .8rem;
+    box-shadow: 0 0 10px 1px rgba($bg-dark, .5);
+    transition: all .5s;
+    background-color: $background
+}
+
+//----------------
+//----------------
+//--- CONTAINER PROPERTY
+
+@mixin l-cont{
+    width: 90%;
+    max-width: 1250px;
+    @include from ($m3){
+        width: 80%
+    }
+}
+
+//----------------
+//----------------
+//--- CENTER PROPERTY
+
+@mixin l-center{
+    margin-left:  var(--margin);
+    margin-right: var(--margin);
+}
+
+//----------------
+//----------------
+//--- BACKGROUND PROPERTY
+
+@mixin bg-cont{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+

@@ -1,0 +1,45 @@
+block config
+    include config
+    include ../components/button
+    include ../components/service
+doctype
+html(lang="es")
+    head
+        title= ` ${NombSitio} | ${NombPagina}`
+        //--- META
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name="robotos" content="index,follow")
+        meta(property="fb:app_id" content="")
+        meta(name="description" content="según el sitio")
+        meta(name="keywords" content=" palabras claves")
+        link(rel="icon" href="" sizes="16x16")
+        //--- ESTILOS EXTERNOS
+        //-- WOW CSS
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css")
+        //-- FONT AWESOME CSS
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css")
+        //-- SOCICON CSS
+        link(rel="stylesheet" href="https://s3.amazonaws.com/icomoon.io/114779/Socicon/style.css?9ukd8d")
+        //--- TIPOGRFIA
+        link(href='https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900', rel='stylesheet')
+        //--- ESTILOS INTERNOS
+        link(rel="stylesheet" href="public/css/styles.css")
+        block styles
+    body
+        include ../includes/header
+        block contenido
+        include ../includes/footer
+        block script-inicio
+        //-- SCRIPT JQUERY
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+        //--WOW
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js")
+        script.
+            new WOW().init();
+        //-- MAIN
+        script(src="public/js/main.js")
+        block script-final
+

@@ -1,0 +1,134 @@
+//-- B A N N E R
+//--------------
+.banner
+{
+  --gradient       : .2;
+  --url            : url('../../public/img/background.jpg');
+  background-color : var(--rgba);
+  @include bg-cont;
+  min-height       : 50vh;
+  background-image : linear-gradient(
+                  rgba($bg-dark, var(--gradient)),
+                  rgba($bg-dark, var(--gradient))
+  ),
+  var(--url);
+}
+
+//--  B L O G
+//--------------
+.blog{
+  padding-top: var(--paddingY);
+  padding-bottom: var(--paddingY);
+  &-container{
+    --columns: 1;
+    --gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-gap: var(--gap);
+    @include from ($m3){
+      --columns: 12;
+      --gap: 30px
+    }
+    .blog-main{
+      grid-column: 1 / 2;
+      display: grid;
+      grid-template-columns: repeat(var(--columns), 1fr);
+      grid-gap: var(--gap);
+      @include from ($m3){
+        --columns: 1;
+        --gap: 20px;
+        grid-column: 1 / 9
+      }
+      &__post{
+        display: flex;
+        @include from ($m3){
+          &:hover{
+            .title{
+              text-decoration: underline
+            }
+            .blog-main__img{
+              img{
+                transform: scale(1.1)
+              }
+            }
+          }
+        }
+        .blog-main__img{
+          width: 130px;
+          height: 120px;
+          @include from ($m1){
+            width: 200px;
+            height: 150px;
+          }
+          @include from ($m3){
+            overflow: hidden;
+          }
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include from ($m3){
+              transition: transform .5s
+            }
+          }
+        }
+        .blog-main__info{
+          --calc: 130px;
+          width: calc(100% - var(--calc));
+          color: var(--text-dark);
+          padding-left: 1rem;
+          @include from ($m1){
+            --calc: 200px
+          }
+          .title{
+            @include from ($m1){
+              font-size: 1.2rem
+            }
+            a{
+              color: var(--text-dark);
+              @include from ($m3){
+                &:hover{
+                  color: var(--first-color)
+                }
+              }
+            }
+          }
+          .description{
+            display: none;
+            @include from ($m2){
+              display: block
+            }
+          }
+          time{
+            font-size: .8rem;
+            display: block;
+            margin-top: .5rem;
+          }
+          .blog-autor{
+            display: flex;
+            align-items: center;
+            margin-top: .5rem;
+            img{
+              --medidas: 30px;
+              width: var(--medidas);
+              height: var(--medidas);
+              border-radius: 50%;
+              object-fit: cover
+            }
+            .autor{
+              margin-left: .5rem;
+              font-size: .9rem
+            }
+          }
+        }
+      }
+    }
+    .blog-aside{
+      grid-column: 1 / 2;
+      background-color: orange;
+      @include from ($m3){
+        grid-column: 9 / 13
+      }
+    }
+  }
+}

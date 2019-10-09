@@ -1,0 +1,46 @@
+extends ../config/template
+append config
+    - NombPagina = "Inicio"
+prepend styles
+block contenido
+
+    //-- B A N N E R
+    //--------------
+    .banner
+        .banner__container.container
+
+    .blog
+        .blog-container.container
+            //-- M A I N 
+            //--------------
+            main.blog-main
+                .blog-main__post
+                    a(href="#").blog-main__img
+                        img(src="public/img/post-1.jpg", alt="sofá para exteriores")
+                    .blog-main__info
+                        h3.title: a(href="#") Lorem ipsum dolor sit amet.
+                        p.description Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, quos.
+                        time(datetime="2008-02-14 20:00") 08 Octubre 2019
+                        .blog-autor
+                            img(src="public/img/autor-1.jpg" alt="Autor 1")
+                            p.autor Pedro Gómez
+                       
+                .blog-main__post
+                    a(href="#").blog-main__img
+                        img(src="public/img/post-2.jpg", alt="sofá para exteriores")
+                    .blog-main__info
+                        h3.title: a(href="#") Adipisicing elit. Recusandae.
+                        p.description Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, quos.
+                        time(datetime="2008-02-14 20:00") 08 Octubre 2019
+                        .blog-autor
+                            img(src="public/img/autor-1.jpg" alt="Autor 1")
+                            p.autor Pedro Gómez
+                       
+            //-- A S I D E
+            //--------------
+            aside.blog-aside
+    
+
+          
+
+prepend script-final
